@@ -6,9 +6,9 @@ import cors from "cors";
 import todoRoutes from "./routes/todos.routes.js"
 
 app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true,
+  origin: "*",
 }));
+
 
 app.use(express.json())
 connectDB()
@@ -17,5 +17,5 @@ app.use("/api/todos", todoRoutes);
 
 
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT , () =>  console.log(`Server is up on Port ${PORT}`)) ;

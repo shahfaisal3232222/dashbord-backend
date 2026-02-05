@@ -45,7 +45,7 @@ export const getUser = async (req, res) => {
   try {
     const users = await User.find({});
     res.send({
-      isSucess: true,
+      isSuccess: true,
       data: users,
     });
   } catch (error) {
